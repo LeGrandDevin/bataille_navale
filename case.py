@@ -1,8 +1,8 @@
 class case():
-    boat = False
+
     shoted = False
     def __init__(self):
-
+         self.shoted = False
     def shot(self):
         self.shoted=True
     

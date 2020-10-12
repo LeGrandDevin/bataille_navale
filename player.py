@@ -1,6 +1,8 @@
+from case import case
 class Player:
     team = []
-    grille =[]
+    desk =[]
 
-    def __init__(self,):
-        
+    def __init__(self,size_desk):
+        for i in range(size_desk):
+            self.desk.append(case())
