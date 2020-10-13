@@ -1,9 +1,8 @@
 class Boat:
     alive = True
 
-    def __init__(self):
-        self.pv = self.pv
-        self.alive = self.alive
+    def __init__(self,size):
+        self.pv = size
 
     def damage(self):
         self.pv -= 1
