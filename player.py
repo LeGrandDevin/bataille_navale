@@ -1,6 +1,6 @@
 class Player:
     team = []
-    grille =[]
+    grille = []
 
     def __init__(self,):
-        
+        self.tkt = self.tkt
