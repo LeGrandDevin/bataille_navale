@@ -12,6 +12,22 @@ class Player:
     
     def placeBoat(self,size,x,y,horizontal):
         currentBoat = bateau.Boat(size)
-        for i in range(size):
-            self.desk[x][y].boat = currentBoat
+        if(horizontal):
+            for i in range(size):
+                x += 1
+                self.desk[x][y].boat = currentBoat
+                self.desk[x][y].isBoat = True
+        else:
+            for i in range(size):
+                y += 1
+                self.desk[x][y].boat = currentBoat
+                self.desk[x][y].isBoat = True
 
+    def showBoard(self):
+        for ligne in self.desk:
+            print('')
+            for case in ligne:
+                if(case.isBoat):
+                    print('#',end='')
+                else:
+                    print('~',end='')
