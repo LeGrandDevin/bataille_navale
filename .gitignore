@@ -128,3 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 main_test.py
+*.xml
+.idea/bataille_navale.iml
