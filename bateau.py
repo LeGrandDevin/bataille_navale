@@ -11,7 +11,7 @@ class Boat:
         self.alive = False
 
     def isAlive(self):
-        if self.pv == 0:
+        if self.pv <= 0:
             return False
         return True
 
