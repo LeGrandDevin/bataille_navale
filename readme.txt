@@ -2,3 +2,7 @@
 Pour lancer le projet actuel, lancer le test_debug.py
 Pour placer un bateau, taper la commande suivante dans test_debug.py avant le while :
 game.player1.placeBoat(#int size, #int X, #int Y, #boolean Horizontal(False)/Vertical(True))
+
+
+-----RAPPEL : dire de faire un pip install pour le pygame etc..
+--TOUT RENAME EN ANGLAIS + COMMENTAIRE
