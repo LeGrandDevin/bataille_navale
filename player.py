@@ -16,14 +16,14 @@ class Player:
         currentBoat = bateau.Boat(size)
         if(horizontal):
             for i in range(size):
-                x += 1
                 self.desk[x][y].boat = currentBoat
                 self.desk[x][y].isBoat = True
+                x += 1
         else:
             for i in range(size):
-                y += 1
                 self.desk[x][y].boat = currentBoat
                 self.desk[x][y].isBoat = True
+                y += 1
         self.team.append(currentBoat)
 
     def showBoard(self):
@@ -47,3 +47,10 @@ class Player:
             if not case.boat.isAlive():
                 case.boat.destroy()
         case.shot()
+
+    def checkwin(self):
+        for boat in self.team:
+            if boat.isAlive():
+                return True
+        return False
+
