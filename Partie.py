@@ -8,12 +8,10 @@ class Partie:
         self.player1 = player.Player(size_desk)
         self.player2 = player.Player(size_desk)
 
-    def round(self, player):
+    def round(self, player, x, y):
         if player == 1:
             print("début du round, joueur 1")
             self.player1.showBoard()
-            x = input('\nx:')
-            y = input('\ny:')
             self.player1.shotBoard(int(x), int(y))
 
             if self.player1.checkwin():
@@ -23,8 +21,6 @@ class Partie:
 
         print("début du round, joueur 2")
         self.player2.showBoard()
-        x = input('\nx:')
-        y = input('\ny:')
         self.player2.shotBoard(int(x), int(y))
 
         if self.player2.checkwin():
