@@ -3,7 +3,7 @@ import bateau
 
 
 class Partie:
-
+    started = False
     def __init__(self, size_desk):
         self.player1 = player.Player(size_desk)
         self.player2 = player.Player(size_desk)
@@ -35,3 +35,8 @@ class Partie:
             print("joueur 2 a win")
         return False
 
+    def placeBoat(self,size,x,y,orientBool,player):
+        if player == 1:
+            self.player1.placeBoat(size,x,y,orientBool)
+        else:
+            self.player2.placeBoat(size,x,y,orientBool)
