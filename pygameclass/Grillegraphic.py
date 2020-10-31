@@ -36,4 +36,4 @@ class grillegraphic:
     def inGrid(self, x ,y ):
         if self.xStart < x < self.xStart + self.size*10 and self.yStart < y < self.yStart + self.size*10 :
             return True 
-        
+
