@@ -3,6 +3,7 @@ import sys
 import pygameclass.casegraphic
 import pygameclass.Grillegraphic
 import Partie
+import pygameclass.menu as Menu
 import pygameclass.boatgraphic as boatGraphic
 
 import math
@@ -16,6 +17,7 @@ fpsClock = pygame.time.Clock()
 
 width, height = 1280, 720
 screen = pygame.display.set_mode((width, height))
+#menu = ....(mettre le menu ici)
 game = Partie.Partie(10)
 p = 2
 g = True

@@ -3,7 +3,7 @@ import Partie
 game = Partie.Partie(10)
 game.player1.placeBoat(3, 2, 2, False)
 game.player1.placeBoat(4, 4, 4, True)
-game.player1.placeBoat(5, 1, 1, False)
+game.player1.placeBoat(5, 2, 2, False)
 #game.player1.placeBoat(2, 7, 7, True)
 #game.player1.placeBoat(3, 9, 2, False)
 
