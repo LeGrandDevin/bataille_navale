@@ -35,3 +35,8 @@ class Partie:
             print("joueur 2 a win")
         return False
 
+    def getPlayer(self, player):
+        if player == 1:
+            return self.player1
+        return self.player2
+

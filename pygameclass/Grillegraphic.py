@@ -28,12 +28,18 @@ class grillegraphic:
     def gridout(self, x, y):
         self.grid[x][y].caseout()
 
+    def gridNothing(self, x, y):
+        self.grid[x][y].caseclickedWithoutBoat()
+
+    def gridBoat(self, x, y):
+        self.grid[x][y].caseclickedWithBoat()
+
     def coordScreenToGrid(self, x, y):
         gx = math.trunc((x - self.xStart) / self.size)
         gy = math.trunc((y - self.yStart) / self.size)
         return gx, gy
     
-    def inGrid(self, x ,y ):
+    def inGrid(self, x, y):
         if self.xStart < x < self.xStart + self.size*10 and self.yStart < y < self.yStart + self.size*10 :
             return True 
 

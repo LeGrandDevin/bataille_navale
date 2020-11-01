@@ -15,11 +15,15 @@ class Player:
     def placeBoat(self, size, x, y, horizontal):
         currentBoat = bateau.Boat(size)
         if(horizontal):
+            if y + size > 9 or self.desk[x][y].isBoat is True:
+                return False
             for i in range(size):
                 self.desk[x][y].boat = currentBoat
                 self.desk[x][y].isBoat = True
                 x += 1
         else:
+            if x + size > 9 or self.desk[x][y].isBoat is True:
+                return False
             for i in range(size):
                 self.desk[x][y].boat = currentBoat
                 self.desk[x][y].isBoat = True
@@ -53,4 +57,6 @@ class Player:
             if boat.isAlive():
                 return True
         return False
+
+
 
