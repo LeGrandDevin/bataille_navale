@@ -93,12 +93,13 @@ while True:
             elif Partie.Partie.started:
                 if ggame.inGrid:
                     if(ggame.playerGrid != p):
-                        p = 1 if p == 2 else 2
-                        noWin = game.round(p, ggame.gx, ggame.gy)
-                        if game.getPlayer(p).desk[ggame.gx][ggame.gy].isBoat:
-                            ggame.actualGrid.gridBoat( ggame.gx, ggame.gy)
-                        else:
-                            ggame.actualGrid.gridNothing( ggame.gx, ggame.gy)
+                        if not game.getPlayer(1 if p == 2 else 2).desk[ggame.gx][ggame.gy].shoted:
+                            p = 1 if p == 2 else 2
+                            noWin = game.round(p, ggame.gx, ggame.gy)
+                            if game.getPlayer(p).desk[ggame.gx][ggame.gy].isBoat:
+                                ggame.actualGrid.gridBoat( ggame.gx, ggame.gy)
+                            else:
+                                ggame.actualGrid.gridNothing( ggame.gx, ggame.gy)
 
 
             else :  
