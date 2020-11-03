@@ -33,7 +33,6 @@ while True:
     # Update.
 
     # Draw.
-    menu.fond
     fond = menu.fond.convert()
     screen.blit(fond, (0, 0))
     screen.blit(menu.quitbutton.image, (800, 50))
