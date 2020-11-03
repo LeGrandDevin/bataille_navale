@@ -85,11 +85,12 @@ while True:
         if not noWin:
             playButton = screen.blit(pygame.image.load("images/playButton.png"),(500,200))
             font = pygame.font.Font('freesansbold.ttf', 32)
-            theText = 'player ' + str(p) + ' win'
+            theText = 'player ' + str(1 if p == 2 else 2) + ' win'
             text = font.render(theText, True, (220,5,25))
             textRect = text.get_rect()  
             textRect.center = ( 1280// 2, 720 // 2 + 50 ) 
             screen.blit(pygame.image.load("images/tmarker.png"),(518,360))
+            screen.blit(text , textRect)
             
         pygame.display.flip()
         ggame.getMousePos(pygame.mouse.get_pos())
