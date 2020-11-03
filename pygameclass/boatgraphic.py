@@ -9,7 +9,7 @@ class Boatgraphic:
         self.sprite = sprite
         self.initialx = x
         self.initialy = y
-        self.orientation = False
+        self.orientation = True
         self.placed = False
         self.gx = 0
         self.gy = 0

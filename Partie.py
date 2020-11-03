@@ -45,3 +45,9 @@ class Partie:
             self.player1.placeBoat(size,x,y,orientBool)
         else:
             self.player2.placeBoat(size,x,y,orientBool)
+    
+    def removeBoat(self,size,x,y,orientation,player):
+        if player == 1:
+            self.player1.removeBoat(size,x,y,orientation)
+        else:
+            self.player2.removeBoat(size,x,y,orientation)

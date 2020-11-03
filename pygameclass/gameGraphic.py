@@ -13,6 +13,7 @@ class gameGraphic:
         self.inGrid = False
         self.actualGrid = self.grid1
         self.g = True
+        self.numberselected = 1
 
 
     def updateBoatsSprite(self):
@@ -42,28 +43,33 @@ class gameGraphic:
         if boatgraphic.Boatgraphic.isselected:
             self.selected.rotate()
 
-    def placeBoat(self, p):
-        if self.inGrid and self.playerGrid == p:
-            self.selected.placeBoat(self.gx, self.gy, self.playerGrid == 1 )
-            boatgraphic.Boatgraphic.isselected = False
-            self.selected.addSquare(self.screen.blit(self.selected.sprite, self.selected.coord()))
-            return True
-        else:
-            self.selected.reinitializecoord()
-            boatgraphic.Boatgraphic.isselected = False
-            if self.selected.orientation:
-                self.selected.rotate()
-            self.selected.addSquare(self.screen.blit(self.selected.sprite, self.selected.coord()))
-            return False
+    def placeBoat(self, p, toPlace):
+        if toPlace:    
+            if self.inGrid and self.playerGrid == p:
+                self.selected.placeBoat(self.gx, self.gy, self.playerGrid == 1 )
+                boatgraphic.Boatgraphic.isselected = False
+                self.selected.addSquare(self.screen.blit(self.selected.sprite, self.selected.coord()))
+                self.numberselected = -1
+                return True
+            else:
+                self.selected.reinitializecoord()
+                boatgraphic.Boatgraphic.isselected = False
+                self.numberselected = -1
+                if not self.selected.orientation:
+                    self.selected.rotate()
+                self.selected.addSquare(self.screen.blit(self.selected.sprite, self.selected.coord()))
+        return False
 
     def checkBoatClick(self):
         for j in range(5):
-            if self.team[j].square.collidepoint(pygame.mouse.get_pos()):
+            if self.team[j].square.collidepoint(pygame.mouse.get_pos()) and self.numberselected != j:
                 self.selected = self.team[j]
                 self.numberselected = j
                 boatgraphic.Boatgraphic.isselected = True
                 self.selected.placed = False
-    
+                return True
+        return False
+
     def mooveBoat(self):
         self.selected.newcoord(pygame.mouse.get_pos())
 
