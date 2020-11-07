@@ -2,7 +2,7 @@ import pygameclass.casegraphic as casegraphic
 import math
 
 
-class grillegraphic:
+class Grillegraphic:
     def __init__(self, display, xStart, yStart):
         self.lastcoord = (0, 0)
         self.grid = []

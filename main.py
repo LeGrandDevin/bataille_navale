@@ -27,7 +27,9 @@ noWin = True
 
 # Variables
 confirmButtunImage = pygame.image.load("images/confirmButton.png")
+menuButton = pygame.image.load("images/menuButton.png")
 menu = Menu.Menu(pygame.image.load("images/quitButton.png"), pygame.image.load("images/playButton.png"), pygame.image.load("images/bataillenavale.jpg"))
+
 menuBool = True
 
 torpilleur = boatGraphic.Boatgraphic(100, 600, pygame.transform.rotate(pygame.image.load("images/torpilleur 2 cases.png"), -90))
@@ -35,8 +37,8 @@ sous_marin = boatGraphic.Boatgraphic(200, 600, pygame.transform.rotate(pygame.im
 destroyer = boatGraphic.Boatgraphic(350, 600, pygame.transform.rotate(pygame.image.load("images/destroyer 3 cases.png"), -90))
 porte_avion = boatGraphic.Boatgraphic(500, 600, pygame.transform.rotate(pygame.image.load("images/porte-avion 4 cases.png"), -90))
 croiseur = boatGraphic.Boatgraphic(750, 600, pygame.transform.rotate(pygame.image.load("images/croiseur 5 cases.png"), -90))
-casetest = pygameclass.Grillegraphic.grillegraphic(screen, 50, 50)
-casetest2 = pygameclass.Grillegraphic.grillegraphic(screen, 700, 50)
+casetest = pygameclass.Grillegraphic.Grillegraphic(screen, 50, 50)
+casetest2 = pygameclass.Grillegraphic.Grillegraphic(screen, 700, 50)
 team = []
 team.append(torpilleur)
 team.append(sous_marin)
@@ -83,7 +85,7 @@ while True:
         ggame.drawGrid()
         ggame.updateBoatsSprite()
         if not noWin:
-            playButton = screen.blit(pygame.image.load("images/playButton.png"),(500,200))
+            menuRect = screen.blit(menuButton,(500,200))
             font = pygame.font.Font('freesansbold.ttf', 32)
             theText = 'player ' + str(1 if p == 2 else 2) + ' win'
             text = font.render(theText, True, (220,5,25))
@@ -119,12 +121,13 @@ while True:
                         Partie.Partie.started = True
                     
                 if not noWin:
-                    if playButton.collidepoint(pygame.mouse.get_pos()):
+                    if menuRect.collidepoint(pygame.mouse.get_pos()):
                         game = Partie.Partie(10)
                         p = 1
                         noWin = True
                         boatPlaced = False
                         ggame = gameGraphic.gameGraphic(team,screen)
+                        menuBool = True
 
                 elif Partie.Partie.started:
                     if ggame.inGrid:

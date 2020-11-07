@@ -8,8 +8,8 @@ class gameGraphic:
         self.team = team
         self.numberSelected = -1
         self.screen = screen
-        self.grid1 = Grillegraphic.grillegraphic(screen, 50, 50)
-        self.grid2 = Grillegraphic.grillegraphic(screen, 700, 50)
+        self.grid1 = Grillegraphic.Grillegraphic(screen, 50, 50)
+        self.grid2 = Grillegraphic.Grillegraphic(screen, 700, 50)
         self.inGrid = False
         self.actualGrid = self.grid1
         self.g = True
